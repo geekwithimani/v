@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&display=swap');
+        
+        body {
+            text-align: center;
+            font-family: 'Parisienne', cursive;
+            background-color: #013220; /* dark green */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .card {
+            background: #654321; /* dark brown */
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            color: #E2DFD2;
+            border: 1px solid #E2DFD2; /* Elegant pearly white frame */
+            position: relative;
+        }
+        .flowers {
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            font-size: 40px;
+        }
+        .flowers-right {
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            font-size: 40px;
+        }
+        h1 {
+            color: #E2DFD2;
+            font-style: italic;
+            font-size: 42px;
+            text-shadow: 4px 4px 6px rgba(0,0,0,0.5);
+        }
+        .heart {
+            font-size: 50px;
+        }
+        .buttons button {
+            font-size: 22px;
+            margin: 12px;
+            padding: 14px 28px;
+            border: 1px solid #E2DFD2;
+            cursor: pointer;
+            border-radius: 12px;
+            font-family: 'Great Vibes', cursive;
+            transition: 0.3s ease-in-out;
+        }
+        .buttons button:hover {
+            background-color: #E2DFD2;
+            color: #654321;
+        }
+        .yes {
+            background-color: #013220; /* dark green */
+            color: #E2DFD2;
+        }
+        .no {
+            background-color: #013220; /* dark green */
+            color: #E2DFD2;
+        }
+        .flower {
+            position: absolute;
+            font-size: 24px;
+            animation: fall 3s linear forwards;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-50px) translateX(0); opacity: 1; }
+            100% { transform: translateY(100vh) translateX(20px); opacity: 0; }
+        }
+        .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #013220; /* Dark Green */
+    color: #E2DFD2; /* Pearly White */
+    padding: 30px;
+    border-radius: 15px;
+    border: 5px solid #E2DFD2;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Great Vibes', cursive;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+        }
+    </style>
+    <script>
+        function showFlowers() {
+    let popup = document.getElementById('popup');
+    let popupText = document.getElementById('popup-text');
+    
+    popup.style.display = 'block';
+    popupText.innerHTML = 'Yes kitten whiskers, do what daddy tells you 🐺';
+
+    for (let i = 0; i < 20; i++) {
+        let flower = document.createElement('div');
+        flower.innerHTML = '(❁´◡`❁)';
+        flower.classList.add('flower');
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDuration = (Math.random() * 2 + 1) + 's';
+        document.body.appendChild(flower);
+        setTimeout(() => flower.remove(), 3000);
+    }
+}
+
+function showBuzzer() {
+    let popup = document.getElementById('popup');
+    let popupText = document.getElementById('popup-text');
+    
+    popup.style.display = 'block';
+    popupText.innerHTML = 'What the sigma, go back and say yes to your alpha wolf 😾🔪';
+}
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+    </script>
+</head>
+<body>
+    <div class="card">
+        
+        <h2>Will you be my Valentine?(´▽`ʃ♡ƪ)</h2>
+        <div class="buttons">
+            <button class="yes" onclick="showFlowers()">Yes</button>
+            <button class="no" onclick="showBuzzer()">No</button>
+        </div>
+        
+    </div>
+<div id="popup" class="popup">
+    <p id="popup-text"></p>
+    <button onclick="closePopup()">Close</button>
+</div>
+
+</body>
+</html>
